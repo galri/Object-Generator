@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95910C85-2404-4C9D-A745-71FF96CB8369}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IntegrationTests</RootNamespace>
+    <AssemblyName>IntegrationTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Test.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Include="packages.config" />
+    <None Include="App.config" />
+    <None Include="GeneratorTests\GenerateObjects.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GenerateObjects.feature.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratorTests\StringBlueprint.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>StringBlueprint.feature.cs</LastGenOutput>
+    </None>
+    <None Include="readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Test.feature.cs">
+      <DependentUpon>Test.feature</DependentUpon>
+    </Compile>
+    <Compile Include="TestSteps.cs" />
+    <Compile Include="GeneratorTests\GenerateObjects.feature.cs">
+      <DependentUpon>GenerateObjects.feature</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorTests\GenerateBindings.cs" />
+    <Compile Include="Models\TestClass.cs" />
+    <Compile Include="GeneratorTests\StringBlueprint.feature.cs">
+      <DependentUpon>StringBlueprint.feature</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorTests\GeneralBindings.cs" />
+    <Compile Include="Helper\ContextsKeys.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GeneratorTests\" />
+    <Folder Include="Models\" />
+    <Folder Include="Helper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PocoGenerator\PocoGenerator.csproj">
+      <Project>{84806328-6EED-4C04-A8C8-2478CF136AAF}</Project>
+      <Name>PocoGenerator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
