@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -26,11 +26,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Blueprint.cs" />
+    <Compile Include="IRandome.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generator.cs" />
-    <Compile Include="Blueprint.cs" />
+    <Compile Include="IBlueprint.cs" />
     <Compile Include="ClassBluePrint.cs" />
     <Compile Include="PropertyBluePrint.cs" />
+    <Compile Include="Randome.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

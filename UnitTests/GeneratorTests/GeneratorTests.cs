@@ -12,7 +12,7 @@ namespace UnitTests
 		{
 			var generator = new Generator<object>();
 
-			generator.Generate(10);
+			var result  = generator.Generate(10);
 		}
 	}
 }

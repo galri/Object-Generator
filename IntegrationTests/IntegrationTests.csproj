@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -34,9 +34,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Test.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-    </None>
     <None Include="packages.config" />
     <None Include="App.config" />
     <None Include="GeneratorTests\GenerateObjects.feature">
@@ -50,26 +47,22 @@
     <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.feature.cs">
-      <DependentUpon>Test.feature</DependentUpon>
-    </Compile>
-    <Compile Include="TestSteps.cs" />
     <Compile Include="GeneratorTests\GenerateObjects.feature.cs">
       <DependentUpon>GenerateObjects.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="GeneratorTests\GenerateBindings.cs" />
     <Compile Include="Models\TestClass.cs" />
     <Compile Include="GeneratorTests\StringBlueprint.feature.cs">
       <DependentUpon>StringBlueprint.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="GeneratorTests\GeneralBindings.cs" />
     <Compile Include="Helper\ContextsKeys.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GeneratorTests\" />
-    <Folder Include="Models\" />
-    <Folder Include="Helper\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PocoGenerator\PocoGenerator.csproj">
       <Project>{84806328-6EED-4C04-A8C8-2478CF136AAF}</Project>

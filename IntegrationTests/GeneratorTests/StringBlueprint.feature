@@ -4,8 +4,7 @@
 Scenario: Generate StringProp with default values
     Given I have a generator for a class TestClass
     When I invoke generate with amount 1
-    Then I should receive one object
-    And the string property should be default string
+    Then the string property should be default string
 
 Scenario: Generate StringProp with fixed set value.
     Given I have a generator for a class TestClass
@@ -16,5 +15,5 @@ Scenario: Generate StringProp with fixed set value.
 Scenario: Generate StringProp with fixed randome Values
     Given I have a generator for a class TestClass
     And I set blueprint for StringProp to "test" and "test2"
-    When I Invoke generate with amount 10
-    Then All StringProp should be "test" or "test"
+    When I invoke generate with amount 10
+    Then All StringProp should be "test" or "test2"
