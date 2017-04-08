@@ -53,10 +53,19 @@ namespace IntegrationTests
         public void ThenAllStringPropShouldBeOr(string p0, string p1)
         {
             var result = GetGResult();
+            int firsts = 0;
+            int seconds = 0;
             foreach (var item in result)
             {
-                Assert.Contains(item.StringProp, new string[] { p0, p1 });
+                if (item.StringProp == p0)
+                    firsts++;
+                else if (item.StringProp == p1)
+                    seconds++;
+                else
+                    throw new AssertionException("Invalid string prop");
             }
+            Assert.Greater(firsts, 40);
+            Assert.Greater(seconds, 40);
         }
     }
 }

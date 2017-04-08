@@ -111,7 +111,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 17
     testRunner.And("I set blueprint for StringProp to \"test\" and \"test2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
-    testRunner.When("I invoke generate with amount 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("I invoke generate with amount 100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
     testRunner.Then("All StringProp should be \"test\" or \"test2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

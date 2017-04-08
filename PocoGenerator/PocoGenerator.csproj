@@ -33,7 +33,7 @@
     <Compile Include="IBlueprint.cs" />
     <Compile Include="ClassBluePrint.cs" />
     <Compile Include="PropertyBluePrint.cs" />
-    <Compile Include="Randome.cs" />
+    <Compile Include="RandomeGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

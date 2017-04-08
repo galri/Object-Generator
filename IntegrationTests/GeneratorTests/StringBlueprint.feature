@@ -15,5 +15,5 @@ Scenario: Generate StringProp with fixed set value.
 Scenario: Generate StringProp with fixed randome Values
     Given I have a generator for a class TestClass
     And I set blueprint for StringProp to "test" and "test2"
-    When I invoke generate with amount 10
+    When I invoke generate with amount 100
     Then All StringProp should be "test" or "test2"
