@@ -35,6 +35,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="GeneratorTests\NumberBlueprints.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NumberBlueprints.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="App.config" />
     <None Include="GeneratorTests\GenerateObjects.feature">
@@ -54,6 +58,11 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="GeneratorTests\GenerateBindings.cs" />
+    <Compile Include="GeneratorTests\NumberBlueprints.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NumberBlueprints.feature</DependentUpon>
+    </Compile>
     <Compile Include="Models\TestClass.cs" />
     <Compile Include="GeneratorTests\StringBlueprint.feature.cs">
       <DependentUpon>StringBlueprint.feature</DependentUpon>

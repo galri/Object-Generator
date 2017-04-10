@@ -27,7 +27,7 @@ namespace PocoGenerator
 
             if (!_bluePrints.ContainsKey(typeof(T)))
             {
-                var nb = new Blueprint<T>(_randome);
+                var nb = new Blueprint(_randome);
                 _bluePrints.Add(typeof(T), nb);
             }
 
@@ -45,7 +45,7 @@ namespace PocoGenerator
         {
             if (!_bluePrints.ContainsKey(typeof(T1)))
             {
-                var nb = new Blueprint<T1>(_randome);
+                var nb = new Blueprint(_randome);
                 _bluePrints.Add(typeof(T1),nb);
             }
 

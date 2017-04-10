@@ -12,7 +12,7 @@ namespace PocoGenerator
 
         public int get(int min, int max)
         {
-            return randome.Next(0,2);
+            return randome.Next(min,max);
         }
     }
 }

@@ -67,5 +67,23 @@ namespace IntegrationTests
             Assert.Greater(firsts, 40);
             Assert.Greater(seconds, 40);
         }
+
+        [Given(@"I set blueprint for numberprop between (.*) and (.*)")]
+        public void GivenISetBlueprintForNumberpropBetweenAnd(int p0, int p1)
+        {
+            GetG().Bt<TestClass>().Between(nameof(TestClass.NumberProp), p0, p1);
+        }
+
+        [Then(@"the numberprop should be between (.*) and (.*)")]
+        public void ThenTheNumberpropShouldBeBetweenAnd(int p0, int p1)
+        {
+            var result = GetGResult();
+
+            foreach (var item in result)
+            {
+                Assert.LessOrEqual(p0, item.NumberProp);
+                Assert.GreaterOrEqual(p1, item.NumberProp);
+            }
+        }
     }
 }

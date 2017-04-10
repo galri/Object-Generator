@@ -19,8 +19,9 @@ namespace PocoGenerator
 
     public interface IBlueprint
     {
-        void Apply<T>(T t) where T : class, new();
-        void Fixed(string name, string value);
+        void Apply(object t);
+        void Fixed(string name, object value);
         void Possible(string name,IEnumerable<object> v);
+        void Between(string v, double p0, double p1);
     }
 }

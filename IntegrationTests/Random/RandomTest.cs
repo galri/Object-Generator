@@ -31,5 +31,25 @@ namespace IntegrationTests.Random
             Assert.Greater(zeroes,40);
             Assert.Greater(ones, 40);
         }
+
+        [Test]
+        public void MinusToPositive()
+        {
+            //Arrange
+            var randomer = new RandomeGenerator();
+            var result = new int[100];
+
+            //Act
+            for (int i = 0; i < 100; i++)
+            {
+                result[i] = randomer.get(-90, 90);
+            }
+
+            //Assert
+            var zeroes = result.Count(t => t < 0);
+            var ones = result.Count(t => t > 0);
+            Assert.Greater(zeroes, 40);
+            Assert.Greater(ones, 40);
+        }
     }
 }

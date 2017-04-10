@@ -8,5 +8,7 @@ namespace IntegrationTests
             get;
             set;
         }
-	}
+
+        public int NumberProp { get; set; }
+    }
 }
